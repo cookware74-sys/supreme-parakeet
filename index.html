@@ -1,0 +1,148 @@
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Airtel RDC - Simulation de prêt</title> <style> *{ box-sizing:border-box; } html,body{ margin:0; padding:0; width:100%; overflow-x:hidden; } body{ font-family:Arial,Helvetica,sans-serif; background:#f5f5f5; color:#171717; } /* ========================= HEADER ========================= */ .header{ height:72px; background:#e60000; display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 3px 12px rgba(0,0,0,.18); overflow:hidden; } .logo{ color:#fff; font-size:31px; font-weight:900; letter-spacing:-2px; z-index:5; } .logo span{ color:#ffcc00; } .menu{ position:absolute; right:20px; color:#fff; font-size:28px; z-index:5; cursor:pointer; } /* ========================= ANIMATED BACKGROUND LOGOS ========================= */ .floating-logo{ position:absolute; color:rgba(255,255,255,.12); font-weight:900; font-size:25px; pointer-events:none; user-select:none; animation:floatLogo 8s ease-in-out infinite; } .logo1{left:5%;top:8px;animation-delay:0s;} .logo2{right:8%;top:35px;animation-delay:1.5s;} .logo3{left:22%;top:45px;animation-delay:3s;} .logo4{right:28%;top:5px;animation-delay:4.5s;} @keyframes floatLogo{ 0%,100%{ transform:translateY(0) rotate(-4deg); opacity:.25; } 50%{ transform:translateY(-10px) rotate(4deg); opacity:.55; } } /* ========================= MAIN ========================= */ .container{ width:100%; max-width:540px; margin:25px auto; padding:0 14px; } .card{ width:100%; background:#fff; border-radius:22px; padding:30px 18px; box-shadow:0 7px 25px rgba(0,0,0,.09); text-align:center; position:relative; overflow:hidden; } /* Decorative red circles */ .card::before, .card::after{ content:""; position:absolute; border-radius:50%; background:rgba(230,0,0,.05); pointer-events:none; } .card::before{ width:170px; height:170px; top:-90px; right:-80px; } .card::after{ width:130px; height:130px; bottom:-70px; left:-60px; } /* ========================= HERO ========================= */ .hero-logo{ width:82px; height:82px; margin:0 auto 18px; border-radius:50%; background:#e60000; color:#fff; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:900; box-shadow:0 8px 25px rgba(230,0,0,.3); animation:pulseLogo 2.5s ease-in-out infinite; } @keyframes pulseLogo{ 0%,100%{ transform:scale(1); box-shadow:0 8px 25px rgba(230,0,0,.25); } 50%{ transform:scale(1.07); box-shadow:0 12px 35px rgba(230,0,0,.42); } } h1{ font-size:27px; line-height:1.2; margin:0 0 12px; text-align:center; } .subtitle{ color:#777; font-size:15px; line-height:1.55; margin:0 0 28px; } /* ========================= COUNTRY BADGE ========================= */ .country{ display:inline-flex; align-items:center; gap:7px; background:#fff1f1; color:#d90000; padding:8px 14px; border-radius:30px; font-size:13px; font-weight:bold; margin-bottom:22px; } .flag{ font-size:18px; } /* ========================= CALCULATOR ========================= */ .calculator{ width:100%; background:#f8f9fb; border-radius:17px; padding:22px 16px; text-align:left; border:1px solid #eeeeee; } .calculator h2{ text-align:center; font-size:21px; margin:0 0 27px; } .row{ margin-bottom:29px; } .label-row{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:15px; font-size:15px; color:#555; } .value{ color:#e00000; font-size:21px; font-weight:bold; white-space:nowrap; } input[type=range]{ width:100%; accent-color:#e60000; cursor:pointer; height:7px; } .range-labels{ display:flex; justify-content:space-between; color:#888; font-size:12px; margin-top:9px; } /* ========================= PAYMENT ========================= */ .payment{ background:#fff; border:1px solid #ddd; border-radius:14px; padding:18px 14px; display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:15px; color:#555; margin-top:23px; } .payment strong{ color:#e00000; font-size:24px; white-space:nowrap; } /* ========================= APPLY BUTTON ========================= */ .apply-btn{ display:block; width:100%; margin:25px auto 0; padding:18px; border-radius:13px; background:#e60000; color:#fff; font-size:19px; font-weight:bold; text-align:center; text-decoration:none; cursor:pointer; box-shadow:0 7px 18px rgba(230,0,0,.25); position:relative; overflow:hidden; transition:.25s ease; } .apply-btn:hover{ background:#c90000; transform:translateY(-2px); box-shadow:0 10px 24px rgba(230,0,0,.35); } .apply-btn::after{ content:""; position:absolute; top:0; left:-120%; width:70%; height:100%; background:linear-gradient( 90deg, transparent, rgba(255,255,255,.4), transparent ); transform:skewX(-20deg); animation:buttonShine 3s infinite; } @keyframes buttonShine{ 0%{left:-120%;} 45%,100%{left:140%;} } /* ========================= AIRTIME / AIRTEL MONEY ========================= */ .airtel-money{ margin-top:25px; background:#fff1f1; border-radius:15px; padding:16px; display:flex; align-items:center; gap:13px; text-align:left; animation:softBounce 3s ease-in-out infinite; } .airtel-circle{ width:48px; height:48px; border-radius:50%; background:#e60000; color:white; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; } .airtel-money strong{ display:block; font-size:15px; margin-bottom:4px; } .airtel-money span{ color:#777; font-size:13px; } @keyframes softBounce{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} } /* ========================= FEATURES ========================= */ .features{ margin-top:32px; display:flex; flex-direction:column; gap:18px; text-align:left; } .feature{ display:flex; align-items:center; gap:14px; padding:10px; border-radius:13px; transition:.25s ease; } .feature:hover{ background:#fff5f5; transform:translateX(5px); } .feature-icon{ width:48px; height:48px; background:#fff0f0; color:#e60000; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:23px; flex-shrink:0; } .feature-text{ display:flex; flex-direction:column; gap:4px; } .feature-text strong{ font-size:16px; } .feature-text span{ color:#888; font-size:13px; } /* ========================= DECORATIVE AIRTAIL LOGOS ========================= */ .logo-cloud{ display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; margin-top:28px; opacity:.9; } .small-airtel{ width:48px; height:48px; border-radius:50%; background:#e60000; color:white; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:900; animation:logoFloat 4s ease-in-out infinite; } .small-airtel:nth-child(2){ animation-delay:.5s; } .small-airtel:nth-child(3){ animation-delay:1s; } .small-airtel:nth-child(4){ animation-delay:1.5s; } .small-airtel:nth-child(5){ animation-delay:2s; } @keyframes logoFloat{ 0%,100%{ transform:translateY(0) rotate(0deg); } 50%{ transform:translateY(-8px) rotate(5deg); } } /* ========================= FOOTER ========================= */ footer{ text-align:center; color:#888; font-size:12px; padding:25px 15px 35px; line-height:1.6; } footer strong{ color:#555; } /* ========================= MOBILE ========================= */ @media(max-width:360px){ .card{ padding:25px 14px; } h1{ font-size:24px; } .calculator{ padding:20px 13px; } .value{ font-size:19px; } .payment{ font-size:13px; } .payment strong{ font-size:21px; } .apply-btn{ font-size:17px; } } /* ========================= REDUCED MOTION ========================= */ @media(prefers-reduced-motion:reduce){ *, *::before, *::after{ animation:none !important; transition:none !important; } } </style> </head> <body> <header class="header"> <!-- Decorative Airtel-themed marks --> <div class="floating-logo logo1">airtel</div> <div class="floating-logo logo2">airtel</div> <div class="floating-logo logo3">airtel</div> <div class="floating-logo logo4">airtel</div> <div class="logo">airtel<span>.</span></div> <div class="menu">☰</div> </header> <main class="container"> <div class="card"> <div class="hero-logo"> airtel </div> <div class="country"> <span class="flag">🇨🇩</span> République Démocratique du Congo </div> <h1>Simulez votre prêt rapidement</h1> <p class="subtitle"> Une simulation simple en Francs Congolais, avec des conditions flexibles. </p> <section class="calculator">
+<h2>Calculateur de prêt</h2>
+
+<div class="row">
+
+  <div class="label-row">
+    <span>Montant du prêt</span>
+    <span class="value" id="amountValue">
+      5 000 000 CDF
+    </span>
+  </div>
+
+  <input
+    type="range"
+    id="amount"
+    min="100000"
+    max="5000000"
+    step="100000"
+    value="5000000"
+  >
+
+  <div class="range-labels">
+    <span>100 000 CDF</span>
+    <span>5 000 000 CDF</span>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="label-row">
+    <span>Durée du prêt</span>
+    <span class="value" id="termValue">
+      12 mois
+    </span>
+  </div>
+
+  <input
+    type="range"
+    id="term"
+    min="3"
+    max="60"
+    step="1"
+    value="12"
+  >
+
+  <div class="range-labels">
+    <span>3 mois</span>
+    <span>60 mois</span>
+  </div>
+
+</div>
+
+<div class="payment">
+
+  <span>
+    Paiement mensuel
+  </span>
+
+  <strong id="paymentValue">
+    434 990 CDF
+  </strong>
+
+</div>
+
+</section>
+
+<a
+href="application.html"
+class="apply-btn"
+
+DEMANDER UN PRÊT
+
+</a> <div class="airtel-money">
+<div class="airtel-circle">
+  airtel
+</div>
+
+<div>
+  <strong>Airtel Money RDC</strong>
+  <span>
+    Service de paiement mobile
+  </span>
+</div>
+
+</div> <section class="features">
+<div class="feature">
+
+  <div class="feature-icon">
+    ⚡
+  </div>
+
+  <div class="feature-text">
+    <strong>Traitement rapide</strong>
+    <span>
+      Votre demande peut être traitée rapidement.
+    </span>
+  </div>
+
+</div>
+
+<div class="feature">
+
+  <div class="feature-icon">
+    💰
+  </div>
+
+  <div class="feature-text">
+    <strong>Montants en CDF</strong>
+    <span>
+      Simulation adaptée à la monnaie congolaise.
+    </span>
+  </div>
+
+</div>
+
+<div class="feature">
+
+  <div class="feature-icon">
+    🔒
+  </div>
+
+  <div class="feature-text">
+    <strong>Données protégées</strong>
+    <span>
+      Ne partagez jamais votre code PIN.
+    </span>
+  </div>
+
+</div>
+
+</section> <!-- Animated Airtel-themed decorative elements --> <div class="logo-cloud">
+<div class="small-airtel">airtel</div>
+<div class="small-airtel">airtel</div>
+<div class="small-airtel">airtel</div>
+<div class="small-airtel">airtel</div>
+<div class="small-airtel">airtel</div>
+
+</div> </div> </main> <footer>
+
+© 2026 — Modèle de démonstration RDC<br>
+
+<strong> Ce site n'est pas un site officiel Airtel. </strong> <br>
+
+Les conditions réelles d'un prêt doivent être
+vérifiées auprès du prestataire financier concerné.
+
+</footer> <script> const amount = document.getElementById("amount"); const term = document.getElementById("term"); const amountValue = document.getElementById("amountValue"); const termValue = document.getElementById("termValue"); const paymentValue = document.getElementById("paymentValue"); /* Taux annuel de simulation. Modifiez cette valeur uniquement pour refléter un taux réel et clairement affiché. */ const annualRate = 0.08; function formatCDF(value){ return Math.round(value).toLocaleString( "fr-FR" ) + " CDF"; } function calculateLoan(){ const principal = Number(amount.value); const months = Number(term.value); const monthlyRate = annualRate / 12; let payment; if(monthlyRate === 0){ payment = principal / months; }else{ payment = principal * monthlyRate * Math.pow( 1 + monthlyRate, months ) / ( Math.pow( 1 + monthlyRate, months ) - 1 ); } amountValue.textContent = formatCDF(principal); termValue.textContent = months + " mois"; paymentValue.textContent = formatCDF(payment); } amount.addEventListener( "input", calculateLoan ); term.addEventListener( "input", calculateLoan ); calculateLoan(); </script> </body> </html>
